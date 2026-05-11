@@ -3,22 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MY Website</title>
+    <title>Algebra 1 Coach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <h1>Welcome to My Website!</h1>
-    <h2>Web develper advnsure</h2>
+    <header>
+      <h1>Algebra 1 Learning Coach</h1>
+      <p>
+        Step-by-step lessons, friendly guidance, and sound to help your 14-year-old
+        master core Algebra 1 concepts. Choose a topic, follow the instructions,
+        and practice until each idea feels easy.
+      </p>
+      <div class="controls" style="justify-content: center; margin-top: 16px; gap: 16px">
+        <button id="toggle-sound" class="secondary">🔊 Sound on</button>
+        <button id="speak-lesson" class="secondary">▶️ Hear this lesson</button>
+      </div>
+    </header>
 
-    <h3>
-      <a href="../4.3 HTML Porfolio Project/public/movie-ranking.html">Movie Ranking Projact</a>
-      <img src="../4.3 HTML Porfolio Project/assets/images/movie-ranking.png"height="200" alt="Movieranking Project">
-      <hr />
-      <a href="../4.3 HTML Porfolio Project/public/birthday-invite.html">Birthday Invite Project</a>
-      <img src="../4.3 HTML Porfolio Project/assets/images/birthday-invite.png"height="200" alt="brithday Invite Project"/>
-      <hr />
-      <a href="../4.3 HTML Porfolio Project/public/about.html">About Me</a>
-      <br />
-      <a href="../4.3 HTML Porfolio Project/public/contact.html">Contact me</a>
-    </h3>
+    <main>
+      <section id="lesson-area" class="section-card">
+        <div>
+          <h2>Choose a concept to study</h2>
+          <div class="topic-list"></div>
+        </div>
+        <div class="lesson-details">
+          <div>
+            <h3 id="lesson-title">Topic title</h3>
+            <span id="lesson-badge" class="badge">Tagline</span>
+          </div>
+          <p id="lesson-overview">Overview text</p>
+          <div>
+            <h4>Core Steps</h4>
+            <ul id="lesson-steps"></ul>
+          </div>
+          <div>
+            <h4>Helpful Hints</h4>
+            <ul id="hint-list"></ul>
+          </div>
+          <button id="new-problem" class="primary" type="button">New problem</button>
+        </div>
+      </section>
+
+      <section class="section-card practice-card">
+        <div>
+          <h3>Practice Zone</h3>
+          <p>
+            Read the problem, say the steps out loud, and enter your answer.
+            The coach will give instant feedback and speak the solution when you
+            need help.
+          </p>
+        </div>
+        <div class="problem-display" id="problem-text">Problem goes here</div>
+        <div class="answer-inputs">
+          <label for="answer" class="visually-hidden">Answer</label>
+          <input id="answer" type="text" placeholder="Type your answer" />
+          <button id="check-answer" class="primary" type="button">Check answer</button>
+        </div>
+        <div id="feedback" class="feedback"></div>
+        <div>
+          <h4>Step-by-step solution</h4>
+          <ol id="solution-steps" class="step-list"></ol>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <h2>Progress Tracker</h2>
+        <p>
+          Celebrate every win! The tracker saves on this device so you can keep
+          building confidence each day.
+        </p>
+        <div class="progress-grid">
+          <div class="progress-tile">
+            <h4>Total attempts</h4>
+            <span id="total-attempts">0</span>
+          </div>
+          <div class="progress-tile">
+            <h4>Correct answers</h4>
+            <span id="correct-attempts">0</span>
+          </div>
+          <div class="progress-tile">
+            <h4>Current streak</h4>
+            <span id="current-streak">0</span>
+          </div>
+        </div>
+        <p id="next-step" style="margin-top: 16px; font-weight: 600"></p>
+        <button id="reset-progress" class="secondary" type="button">Reset my progress</button>
+      </section>
+
+      <section class="section-card resources">
+        <article>
+          <h3>Daily Study Plan (20 minutes)</h3>
+          <ol id="study-plan"></ol>
+        </article>
+        <article>
+          <h3>Mindset &amp; Memory Tips</h3>
+          <ul id="tip-list" class="tip-list"></ul>
+        </article>
+        <article>
+          <h3>Formula Cheat Sheet</h3>
+          <ul class="tip-list">
+            <li>Slope-intercept form: y = mx + b</li>
+            <li>Point-slope form: y - y₁ = m(x - x₁)</li>
+            <li>Distributive property: a(b + c) = ab + ac</li>
+            <li>Zero product property: if ab = 0, then a = 0 or b = 0</li>
+            <li>Average rate of change = (change in y) / (change in x)</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>Made with encouragement for your algebra journey.</footer>
+
+    <script src="assets/app.js" defer></script>
   </body>
 </html>
